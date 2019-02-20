@@ -1,0 +1,35 @@
+package days_from_birth;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Scanner;
+
+public class DaysSinceBirth {
+
+	public static void main(String[] argc) {
+		/*Scanner sc = new Scanner(System.in);
+		System.out.println("Please input your year of birth ");
+		int year = sc.nextInt();
+		System.out.println("Please input your month of birth ");
+		int month = sc.nextInt();
+		System.out.println("Please input your day of birth ");
+		int day = sc.nextInt();*/
+		int year = 1999;
+		int month = 5;
+		int day = 9;
+		ZonedDateTime zdt = ZonedDateTime.parse(year + "-0" + month + "-0" + day + "T12:30:40+01:00[Europe/London]");
+		System.out.println(zdt.getYear() + " " + zdt.getMonth() + " " + zdt.getDayOfMonth() + " " + zdt.getHour() + zdt.getMinute() + zdt.getSecond());
+		
+	}
+	
+	public int daysFromBirth(int year, int month, int day) {
+		ZonedDateTime zdt = ZonedDateTime.now();
+		int cYear = zdt.getYear();
+		int days = 0;
+		while(year != cYear) {
+			
+			year++;
+		}
+		return 0;
+	}
+}

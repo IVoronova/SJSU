@@ -1,0 +1,41 @@
+package sjsu.Voronova.cs146.project1;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class MusicShuffleTest {
+
+	@Before
+	public void setUp() throws Exception {
+		MusicShuffle shuffler = new MusicShuffle("testFiles/Playlist.txt", 20);
+		shuffler.shuffleSongs();
+	}
+
+	@Test
+	public void testShuffleSongs() {
+		try {
+			BufferedReader Out = new BufferedReader(new FileReader("outputFiles/VoronovaIrinaPlaylist.txt"));
+			BufferedReader In = new BufferedReader(new FileReader("testFiles/Target1.txt"));
+			String expectedLine;
+			String actualLine;
+			
+			while((expectedLine = In.readLine()) != null) {
+				actualLine = Out.readLine();
+				assertEquals(expectedLine, actualLine);
+				
+			}
+			Out.close();
+			In.close();
+		}
+		catch(Exception x) {
+			fail("File not found");
+		}
+		
+	}
+
+}

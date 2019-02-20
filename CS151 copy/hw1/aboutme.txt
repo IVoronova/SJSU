@@ -1,0 +1,12 @@
+Your name: Irina Voronova
+Your student ID: 01187785
+Your major: Software Engineering
+Your preferred email address: voronovairina905@gmail.com
+Check one: [x] Undergraduate, [ ] Graduate, [ ] Open university 
+Repeating the class? [ ] Yes, [x] No
+Place and semester where you took a programming course in Java: San Jose State University Spring 2018
+Course number and grade received: CS46B A
+Place and semester where you took a course in data structures: San Jose State University Fall 2018
+Course number and grade received: CS146 B-
+Time it took you to answer the two questions below: 7 minutes
+Did you ask anyone for help? [ ] Yes, [x] No

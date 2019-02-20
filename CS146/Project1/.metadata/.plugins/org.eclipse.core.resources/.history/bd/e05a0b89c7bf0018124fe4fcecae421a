@@ -1,0 +1,14 @@
+package sjsu.Voronova.cs146.project1;
+
+import java.util.LinkedList;
+
+public class PrisonerElimination {
+
+	private LinkedList<Integer> prisoners;
+	
+	public PrisonerElimination (LinkedList<Integer> prisoners) {
+		this.prisoners = prisoners;
+		prisoners.
+		
+	}
+}

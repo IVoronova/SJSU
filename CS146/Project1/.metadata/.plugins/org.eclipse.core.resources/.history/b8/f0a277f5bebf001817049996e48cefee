@@ -1,0 +1,15 @@
+package sjsu.Voronova.cs146.project1;
+
+import java.util.LinkedList;
+
+public class PrisonerLinkedList<E> extends LinkedList<E>{
+
+	private static final long serialVersionUID = 1L;
+
+	public PrisonerLinkedList (LinkedList<E> l) {
+		super(l);
+	
+	}
+	
+
+}

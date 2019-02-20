@@ -1,0 +1,30 @@
+package sjsu.Voronova.cs146.project1;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+public class MusicShuffle {
+	
+	private ArrayList<String> playlist;
+	
+	public MusicShuffle(File playlistFile) throws Exception{
+		
+		playlist = new ArrayList<String>();
+		BufferedReader bf = new BufferedReader(new FileReader("testFiles/ShuffleTest1.txt"));
+		String song = bf.readLine();
+		while(song != null) {
+			playlist.add(song);
+			song = bf.readLine();
+		}
+		bf.close();
+		
+	}
+	
+	public void shuffleSongs() {
+		
+	}
+}

@@ -1,0 +1,18 @@
+package redblacktree;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class PoemSpellCheck {
+	private RedBlackTree<String> dictionary = new RedBlackTree<String>();
+	private long dicTime;
+	
+	public void createDictionary() throws FileNotFoundException {
+	
+		BufferedReader bf = new BufferedReader(new FileReader("TextFiles/Dictionary.txt"));
+	
+		String word = bf.readLine();
+		long start = System.currentTimeMillis();
+	}
+}

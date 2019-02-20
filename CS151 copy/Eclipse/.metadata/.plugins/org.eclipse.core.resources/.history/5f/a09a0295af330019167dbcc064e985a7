@@ -1,0 +1,12 @@
+package days_from_birth;
+
+import java.time.ZonedDateTime;
+
+public class DaysSinceBirth {
+
+	public static void main(String[] argc) {
+		
+		ZonedDateTime zdt = ZonedDateTime.now();
+		System.out.println(zdt.getYear() + " " + zdt.getMonth() + " " + zdt.getDayOfMonth());
+	}
+}

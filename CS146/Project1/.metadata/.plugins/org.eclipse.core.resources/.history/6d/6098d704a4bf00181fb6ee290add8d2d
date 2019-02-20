@@ -1,0 +1,25 @@
+package sjsu.Voronova.cs146.project1;
+
+import static org.junit.Assert.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class MusicShuffleTest {
+
+	@Before
+	public void setUp() throws Exception {
+		MusicShuffle shuffler = new MusicShuffle("testFiles/Playlist.txt", 20);
+		shuffler.shuffleSongs();
+	}
+
+	@Test
+	public void testShuffleSongs() {
+		BufferedReader Out = new BufferedReader(new FileReader("outputFiles/VoronovaIrina"))
+		fail("Not yet implemented"); // TODO
+	}
+
+}

@@ -1,0 +1,23 @@
+package rec;
+
+public class FibGenerator {
+	
+	private int computeFibRecurse (int n) {
+		if( n == 1 || n == 2)
+			return 1;
+		
+		return computeFibRecurse(n - 1) + computeFibRecurse(n - 2);
+	}
+
+	public int nthFib(int n) {
+		return computeFibRecurse(n);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("STARTTING");
+		FibGenerator gen = new FibGenerator();
+		for (int x = 1; x <= 20; x++) {
+			System.out.println(x + " Fib number = " + gen.nthFib(x));
+		}
+	}
+}

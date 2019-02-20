@@ -1,0 +1,64 @@
+package redblacktree;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class PoemSpellCheck {
+	public static RedBlackTree<String> dictionary = new RedBlackTree<String>();
+	public static long dicTime;
+	
+	public static void createDictionary() throws IOException {
+	
+		BufferedReader bf = new BufferedReader(new FileReader("Files/Dictionary.txt"));
+	
+		String word = bf.readLine();
+		long start = System.currentTimeMillis();
+		while(word != null) {
+			dictionary.insert(word);
+			word = bf.readLine();
+		}
+		dicTime = System.currentTimeMillis() - start;
+		bf.close();
+	}
+	
+	public static ArrayList<String> checkMispellings(String Filepath) throws IOException {
+		ArrayList<String> mispelling = new ArrayList<String>();
+		ArrayList<String> poem = new ArrayList<String>();
+		BufferedReader bf = new BufferedReader(new FileReader(Filepath));
+		String line = bf.readLine();
+		
+		while(line != null) {
+			line.toLowerCase();
+			
+			String[] split = line.split(" ");
+			for(String s: split) {
+				poem.add(s);
+			}
+			line = bf.readLine();
+		}
+		for(String s: poem) {
+			System.out.println(dictionary.lookup(s).key);
+		}
+		
+		return mispelling;
+	}
+
+	public static void main(String[] arg) {
+		try {
+			createDictionary();
+			ArrayList<String> checked = checkMispellings("Files/TheRoadNotTaken.txt");
+			if(checked.isEmpty()) {
+				System.out.println("No mistakes");
+			}else {
+				System.out.println("Mistakes:");
+				for(String s: checked)
+					System.out.println(s);
+			}
+		}catch(IOException x){
+			System.out.println("File not found");
+		}
+	}
+}

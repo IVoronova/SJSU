@@ -1,0 +1,50 @@
+package redblacktree;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class PoemSpellCheck {
+	public static RedBlackTree<String> dictionary = new RedBlackTree<String>();
+	public static long dicTime;
+	
+	public static void createDictionary() throws IOException {
+	
+		BufferedReader bf = new BufferedReader(new FileReader("TextFiles/Dictionary.txt"));
+	
+		String word = bf.readLine();
+		long start = System.currentTimeMillis();
+		while(word != null) {
+			dictionary.insert(word);
+			word = bf.readLine();
+		}
+		dicTime = System.currentTimeMillis() - start;
+		bf.close();
+	}
+	
+	public static ArrayList<String> checkMispellings(String Filepath) throws IOException {
+		ArrayList<String> mispelling = new ArrayList<String>();
+		ArrayList<String> poem = new ArrayList<String>();
+		BufferedReader bf = new BufferedReader(new FileReader(Filepath));
+		String line = bf.readLine();
+		
+		while(line != null) {
+			String[] eh = line.split(" ");
+			for(String s: eh)
+				poem.add(s);
+		}
+		for(String s: poem)
+			System.out.println(s);
+		return mispelling;
+	}
+	
+	public static void main(String[] arg) {
+		try {
+			checkMispellings("TextFiles/TheRoadNotTake.txt");
+		}catch(Exception x){
+			System.out.println("File not found");
+		}
+	}
+}

@@ -1,0 +1,61 @@
+package sjsu.Voronova.cs146.project1;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Random;
+
+/*
+ * MusicShuffle takes text file of list of songs, shuffles the songs and creates new text file with the given songs shuffled.
+ */
+public class MusicShuffle {
+	
+	private ArrayList<String> playlist; //Array of all the songs from the text file
+	private Random myRanGen; //random generator for generating random numbers for shuffling
+	
+	/*
+	 * Takes text file and converts it to an ArrayList<String> of the songs
+	 * Throws exception if file is not found
+	 */
+	public MusicShuffle(String filePath) throws Exception{
+		
+		playlist = new ArrayList<String>();
+		BufferedReader bf = new BufferedReader(new FileReader(filePath));
+		String song = bf.readLine();
+		
+		while(song != null) {
+			playlist.add(song);
+			song = bf.readLine();
+		}
+		bf.close();
+		
+		myRanGen = new java.util.Random(20); //seed 20
+		
+	}
+	
+	// Returns random double from 0 to 1
+	private double myrandom() {
+		return myRanGen.nextDouble(); // random double from 0 to 1
+	}
+	
+	private void createNewPlaylistFile() {
+		File myPlaylist = new File("outputFiles/VoronovaIrinaPlaylist.txt");
+		//PrintWriter pw = new PrintWriter()
+	}
+	
+	public void shuffleSongs() {
+		
+		createNewPlaylistFile();
+	}
+	
+	public static void main(String[] args) {
+       try  {
+    	   		MusicShuffle test = new MusicShuffle("testFiles/ShuffleTest1");
+    	   		test.shuffleSongs();
+       }catch (Exception x) {
+    	    		System.out.println("Couldnt find file");
+       }
+    }
+}

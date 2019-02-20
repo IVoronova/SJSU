@@ -1,0 +1,29 @@
+package sjsu.Voronova.cs146.project1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PrisonerLinkedListTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testIsEmpty() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testAdd() {
+		fail("Not yet implemented"); // TODO
+	}
+
+	@Test
+	public void testEliminatePrisoners() {
+		fail("Not yet implemented"); // TODO
+	}
+
+}

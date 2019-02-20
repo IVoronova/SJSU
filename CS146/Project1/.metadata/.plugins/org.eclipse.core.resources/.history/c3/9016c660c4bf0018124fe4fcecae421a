@@ -1,0 +1,37 @@
+package sjsu.Voronova.cs146.project1;
+
+import java.util.List;
+
+public class PrisonersLinkedList {
+	
+	private ListNode tail;
+	private ListNode head;
+	private int size;
+	
+	private class ListNode{
+		
+		private ListNode next;
+		private int data;
+		
+		public ListNode(int data) {
+			this.data = data;
+		}
+		
+		public void setNext(ListNode node) {
+			next = node;
+		}
+	}
+	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
+	public void add(int data) {
+		
+		if(head != null) {
+			
+		}
+	}
+	
+	
+}

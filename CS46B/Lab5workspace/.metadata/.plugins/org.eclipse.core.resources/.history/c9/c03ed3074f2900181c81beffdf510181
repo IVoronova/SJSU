@@ -1,0 +1,24 @@
+package rec;
+
+public class FactorialGenerator {
+	
+	private long computeFactorialRecurse(int n) {
+		if(n == 0) {
+			return 1;
+		}
+		
+		
+		return n * computeFactorialRecurse(n - 1);
+		
+	}
+
+	public long nthFactorial(int n) {
+		
+		return computeFactorialRecurse(n);
+	}
+	
+	public static void main(String[] args) {
+		FactorialGenerator fGenerator = new FactorialGenerator();
+		System.out.println("Factorial of 10 = " + fGenerator.nthFactorial(10));
+	}
+}

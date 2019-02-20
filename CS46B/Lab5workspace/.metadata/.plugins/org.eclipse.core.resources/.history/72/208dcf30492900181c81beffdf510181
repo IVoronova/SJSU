@@ -1,0 +1,15 @@
+package rec;
+
+import java.io.File;
+
+public class Lister {
+	
+	private File file;
+	private boolean showHidden;
+	
+	public Lister (File file, boolean showHidden) {
+		this.file = file;
+		this.showHidden = showHidden;
+	}
+
+}
